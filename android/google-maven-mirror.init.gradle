@@ -1,0 +1,21 @@
+// Adds a reachable cache in front of Google's Maven repository for networks
+// where dl.google.com is blocked or returns synthetic 404 responses.
+def googleMirror = uri('https://cache-redirector.jetbrains.com/dl.google.com/dl/android/maven2')
+
+gradle.beforeProject { project ->
+    project.buildscript.repositories {
+        maven { url googleMirror }
+    }
+    project.repositories {
+        maven { url googleMirror }
+    }
+}
+
+settingsEvaluated { settings ->
+    settings.pluginManagement.repositories {
+        maven { url googleMirror }
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
