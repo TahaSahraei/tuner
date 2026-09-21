@@ -20,7 +20,36 @@
 
 # misc
 .DS_Store
+Thumbs.db
+Desktop.ini
 *.pem
+
+# secrets, credentials, and signing material
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.mobileprovision
+*.provisionprofile
+.netrc
+.npmrc.local
+.dev.vars*
+**/google-services.json
+**/GoogleService-Info.plist
+**/service-account*.json
+**/client_secret*.json
+
+# local databases and runtime state
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
 
 # debug
 npm-debug.log*
@@ -40,6 +69,25 @@ next-env.d.ts
 /dist/
 /dist-mobile/
 /.wrangler/
+
+# local caches and editor state
+/.cache/
+/.idea/
+/.vscode/*.local.json
+/.eslintcache
+/.stylelintcache
+/.turbo/
+/.pytest_cache/
+/.coverage
+/htmlcov/
+*.swp
+*.swo
+*.tmp
+*.bak
+*.orig
+*.hprof
+*.xcuserstate
+
 # Checkout-local execution profile and tool state; never publish them.
 /.sites-runtime/
 /.agents/
